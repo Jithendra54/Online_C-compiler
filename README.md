@@ -29,6 +29,10 @@ online-c-compiler
 3. Run the backend server (if required)
 4. Open `index.html` in the browser
 
+## Screenshot
+
+![Online C Compiler](images/compiler.png)
+
 ## Author
 Jithendra Vishnu  
 B.Tech CSE – Central University of Jammu
