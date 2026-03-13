@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An online C compiler with a browser editor, stdin support, sample programs, and live output."
+    />
+    <title>C Forge | Online C Compiler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow--left"></div>
+    <div class="page-glow page-glow--right"></div>
+
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__mark">C</div>
+          <div>
+            <p class="eyebrow">Browser Runtime</p>
+            <p class="brand__name">C Forge</p>
+          </div>
+        </div>
+
+        <div class="topbar__actions">
+          <button id="themeToggle" class="button button--ghost" type="button" aria-pressed="false">Dark mode</button>
+          <button id="copyButton" class="button button--ghost" type="button">Copy code</button>
+          <button id="resetButton" class="button button--ghost" type="button">Reset</button>
+          <button id="runButton" class="button button--primary" type="button">Run program</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Online C Compiler</p>
+          <h1>Write C. Run it instantly. Share the result.</h1>
+          <div class="hero__copy">
+            <p>
+              A focused online compiler for learning, testing snippets, and validating C logic
+              without local setup. Edit code, pass stdin, and inspect compiler output in one view.
+            </p>
+          </div>
+
+          <div class="hero__badges">
+            <span id="connectionBadge" class="badge">Connecting to runtime</span>
+            <span id="runtimeBadge" class="badge">Detecting C version</span>
+            <span class="badge">stdin support</span>
+            <span class="badge">Ctrl/Cmd + Enter</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-dock">
+        <div class="section-heading section-heading--compact">
+          <div>
+            <p class="eyebrow">Guides</p>
+            <h2>Keep help tucked away until you need it</h2>
+          </div>
+          <div class="info-dock__actions">
+            <button id="tipsToggle" class="button button--ghost button--compact" type="button" aria-expanded="false" aria-controls="tipsPanel">
+              Tips
+            </button>
+            <button id="instructionsToggle" class="button button--ghost button--compact" type="button" aria-expanded="false" aria-controls="instructionsPanel">
+              Instructions
+            </button>
+          </div>
+        </div>
+
+        <div class="info-dock__panels">
+          <article id="tipsPanel" class="mini-panel" hidden>
+            <h3 class="mini-panel__title">Quick tips</h3>
+            <ul class="mini-panel__list">
+              <li>Use the sample programs to test syntax fast.</li>
+              <li>Paste data into stdin for <code>scanf</code> or <code>fgets</code>.</li>
+              <li>Compiler notes appear above program output in the console.</li>
+            </ul>
+          </article>
+
+          <article id="instructionsPanel" class="mini-panel" hidden>
+            <h3 class="mini-panel__title">How to use it</h3>
+            <ul class="mini-panel__list">
+              <li>Edit the code in <code>main.c</code>.</li>
+              <li>Click <strong>Run program</strong> or press <strong>Ctrl/Cmd + Enter</strong>.</li>
+              <li>Use <strong>Copy code</strong> to grab the current source instantly.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="examples-wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Examples</p>
+            <h2>Load a sample program</h2>
+          </div>
+        </div>
+
+        <section class="examples">
+          <button class="example-pill is-active" data-example="starter" type="button">Hello World</button>
+          <button class="example-pill" data-example="input" type="button">Scanf</button>
+          <button class="example-pill" data-example="arrays" type="button">Array Sum</button>
+          <button class="example-pill" data-example="loops" type="button">Multiplication Table</button>
+        </section>
+      </section>
+
+      <main class="workspace">
+        <section class="panel panel--editor">
+          <div class="panel__header">
+            <span>main.c</span>
+            <span id="codeStats">0 lines</span>
+          </div>
+
+          <div class="editor">
+            <div id="lineNumbers" class="editor__gutter" aria-hidden="true">1</div>
+            <textarea
+              id="codeEditor"
+              class="editor__input"
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></textarea>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel__header">
+              <span>Program Input</span>
+              <span>stdin</span>
+            </div>
+            <textarea
+              id="stdinInput"
+              class="panel__textarea"
+              placeholder="Optional input for scanf, fgets, or stdin-driven programs"
+              spellcheck="false"
+            ></textarea>
+          </section>
+
+          <section class="panel panel--output">
+            <div class="panel__header">
+              <span>Console</span>
+              <span id="outputStatus">Idle</span>
+            </div>
+            <pre id="outputConsole" class="console">Run your program to see compiler output.</pre>
+            <div class="console__meta">
+              <span id="exitStatus">Status not run yet</span>
+              <span id="durationStatus">Waiting for execution</span>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
