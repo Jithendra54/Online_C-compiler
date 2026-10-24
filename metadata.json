@@ -1,0 +1,5 @@
+{
+  "name": "C-Compiler",
+  "description": "A browser-based C compiler and runtime environment simulation.",
+  "requestFramePermissions": []
+}
