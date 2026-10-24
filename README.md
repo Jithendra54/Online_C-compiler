@@ -1,38 +1,50 @@
-# Online C Compiler
+# C Forge — Online C Compiler
 
-A web-based **Online C Compiler** that allows users to write, compile, and execute C programs directly from the browser without installing any software.
+C Forge is a browser-based workspace for writing, running, and testing C programs. It includes a lightweight editor, sample programs, standard input support, and a console for compiler and runtime output.
 
 ## Features
-- Write C programs in the browser
-- Compile and run code instantly
-- Real-time output display
-- Simple and user-friendly interface
 
-## Technologies Used
+- Edit C code directly in the browser
+- Run programs through the Judge0 CE compilation API
+- Provide standard input for programs using `scanf` or `fgets`
+- Load sample programs for common C patterns
+- Switch between light and dark themes
+- Copy or reset code quickly
+
+## Built with
+
 - HTML
 - CSS
 - JavaScript
-- Backend (if applicable)
+- Vite for local development and production builds
+- Judge0 CE for compilation and execution
 
-## Project Structure
-online-c-compiler
-│
-├── index.html
-├── style.css
-├── script.js
-├── server.js (if backend exists)
-└── README.md
-## How to Run
+## Run locally
 
-1. Clone the repository
-2. Open the project folder
-3. Run the backend server (if required)
-4. Open `index.html` in the browser
+Install Node.js, then run:
 
-## Screenshot
+```bash
+npm install
+npm run dev
+```
 
-![Online C Compiler](images/compiler.png)
+To create a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+The project is configured for GitHub Pages at:
+
+`https://jithendra54.github.io/Online_C-compiler/`
+
+Push changes to the `main` branch to trigger the GitHub Actions deployment workflow.
 
 ## Author
-Jithendra Vishnu  
-B.Tech CSE – Central University of Jammu
+
+**Jithendra Vishnu**  
+B.Tech, Computer Science and Engineering  
+GitHub: https://github.com/Jithendra54
